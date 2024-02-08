@@ -1,0 +1,15 @@
+#cloud-config
+users:
+  - name: admin
+    groups: Administrators
+    passwd: "${admin_passwd}"
+
+write_files:
+  - encoding: b64
+    content: ${icas_config}
+    path: C:\iCASDeployment\CustomSettings.json
+    permissions: '0644'
+
+runcmd:
+  - ['curl.exe', '-s', 'https://icas:compliance@iternity.com/tmp/iternity-3-7/Integrations/STACKIT/RunIntegrationDeployment.ps1','-o','C:\iCASDeployment\RunIntegrationDeployment.ps1']
+  - ['powershell', 'C:\iCASDeployment\RunIntegrationDeployment.ps1']

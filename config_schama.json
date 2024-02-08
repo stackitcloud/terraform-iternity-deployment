@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "MailConfiguration": {
+      "type": "object",
+      "properties": {
+        "RecipientMailAddress": {
+          "type": "string",
+          "format": "email"
+        },
+        "SenderMailAddress": {
+          "type": "string",
+          "format": "email"
+        },
+        "MailServer": {
+          "type": "string",
+          "anyOf": [
+            {
+              "format": "hostname"
+            },
+            {
+              "format": "ipv4"
+            },
+            {
+              "format": "ipv6"
+            }
+          ]
+        }
+      }
+    },
+    "S3Configuration": {
+      "type": "object",
+      "properties": {
+        "S3EndpointURL": {
+          "type": "string",
+          "format": "uri"
+        },
+        "S3AccessKey": {
+          "type": "string"
+        },
+        "S3SecretKey": {
+          "type": "string"
+        }
+      }
+    },
+    "Applications": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Application": {
+              "type": "string",
+              "enum": [
+                "Custom ReadOnly",
+                "Custom Autocommit",
+                "tbd"
+              ]
+            },
+            "Sharename": {
+              "type": "string"
+            },
+            "Repositoryname": {
+              "type": "string"
+            },
+            "DefaultRetentionValue": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "DefaultRetentionUnit": {
+              "type": "string",
+              "enum": [
+                "Days",
+                "Months",
+                "Years"
+              ]
+            },
+            "Encryption": {
+              "type": "boolean",
+              "default": false
+            },
+            "Compression": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ]
+    }
+  }
+}

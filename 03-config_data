@@ -1,0 +1,32 @@
+{
+    "MailConfiguration": {
+        "RecipientMailAddress": "",
+        "SenderMailAddress": "",
+        "MailServer": ""
+    },
+    "S3Configuration": {
+        "S3EndpointURL": "https://object.storage.eu01.onstackit.cloud",
+        "S3AccessKey": "${access_key}",
+        "S3SecretKey": "${secret_access_key}"
+    },
+    "Applications": [
+        {
+            "Application": "Custom Autocommit",
+            "Sharename": "application01",
+            "Repositoryname": "application01",
+            "DefaultRetentionValue": 1,
+            "DefaultRetentionUnit": "Days",
+            "Encryption": false,
+            "Compression": true
+        },
+        {
+            "Application": "Custom ReadOnly",
+            "Sharename": "application02",
+            "Repositoryname": "application02",
+            "DefaultRetentionValue": 1,
+            "DefaultRetentionUnit": "Days",
+            "Encryption": false,
+            "Compression": true
+        }
+    ]
+}

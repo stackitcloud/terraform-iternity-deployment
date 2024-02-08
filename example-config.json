@@ -1,0 +1,23 @@
+{
+    "MailConfiguration": {
+      "RecipientMailAddress": "info@test.de",
+      "SenderMailAddress": "icas@test.de",
+      "MailServer": "mail.test.de"
+    },
+    "S3Configuration": {
+      "S3EndpointURL": "https://object.storage.eu01.onstackit.cloud",
+      "S3AccessKey": "ABCDEFGHI",
+      "S3SecretKey": "ABCDEFGHIJKLMNOPQRST"
+    },
+    "Applications": [
+      {
+        "Application": "Custom Test",
+        "Sharename": "ABCDEFGHIJKLM",
+        "Repositoryname": "Test",
+        "DefaultRetentionValue": 671,
+        "DefaultRetentionUnit": "Months",
+        "Encryption": false,
+        "Compression": true
+      }
+    ]
+  }

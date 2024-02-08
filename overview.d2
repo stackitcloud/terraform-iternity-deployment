@@ -1,0 +1,33 @@
+Project: {
+    style: {
+      stroke: black
+      font-color: "#004E5A"
+      fill: "#F8EC17"
+      opacity: 0.8
+    }
+
+    S3 Bucket: {
+        shape: image
+        icon: https://styleguide.stackit.schwarz/imagery/object-storage-bucket.svg
+    }
+    S3 Bucket <- iTernity iCAS
+
+    iTernity iCAS: {
+        shape: image
+        icon: https://styleguide.stackit.schwarz/imagery/virtual-machine.svg
+    }
+
+    Metadata Volume:{
+        shape: image
+        icon: https://styleguide.stackit.schwarz/imagery/volume.svg
+    }
+
+    Data Volume:{
+        shape: image
+        icon: https://styleguide.stackit.schwarz/imagery/volume.svg
+    }
+
+    iTernity iCAS -> Metadata Volume
+    iTernity iCAS -> Data Volume
+    
+}
