@@ -11,7 +11,7 @@ resource "openstack_blockstorage_volume_v3" "root_volume" {
   name              = "iCAS Root Volume"
   description       = "Root Volume Windows Server 2022"
   size              = var.root_storage_size
-  image_id          = "668be782-0647-428d-ac47-493b84ae9d23"
+  image_id          = "3b6a8d96-4488-4a9a-bb2e-8f3aa8da5e47"
   availability_zone = var.availability_zone
   volume_type       = var.root_storage_type
 }
@@ -59,6 +59,9 @@ resource "openstack_compute_instance_v2" "instance" {
     port = openstack_networking_port_v2.port.id
   }
   stop_before_destroy = true
+  depends_on = [
+    stackit_objectstorage_bucket.icas_bucket
+  ]
 }
 
 resource "openstack_networking_port_v2" "port" {
