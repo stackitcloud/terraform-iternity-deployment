@@ -53,7 +53,7 @@ resource "openstack_compute_instance_v2" "instance" {
     delete_on_termination = true
   }
   availability_zone = var.availability_zone
-  security_groups   = ["iCAS Access", "${openstack_networking_secgroup_v2.icas.id}"]
+  security_groups   = ["${openstack_networking_secgroup_v2.icas.id}"]
   user_data         = data.template_file.user_data.rendered
   network {
     port = openstack_networking_port_v2.port.id
