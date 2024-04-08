@@ -53,7 +53,6 @@ resource "openstack_compute_instance_v2" "instance" {
     delete_on_termination = true
   }
   availability_zone = var.availability_zone
-  security_groups   = ["${openstack_networking_secgroup_v2.icas.id}"]
   user_data         = data.template_file.user_data.rendered
   network {
     port = openstack_networking_port_v2.port.id
@@ -68,6 +67,7 @@ resource "openstack_networking_port_v2" "port" {
   name           = "iCAS VM Port"
   network_id     = openstack_networking_network_v2.lan_network.id
   admin_state_up = "true"
+  security_group_ids = ["${openstack_networking_secgroup_v2.icas.id}", "${data.openstack_networking_secgroup_v2.default.id}"]
   fixed_ip {
     subnet_id = openstack_networking_subnet_v2.lan_subnet_1.id
   }

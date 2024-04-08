@@ -22,3 +22,8 @@ resource "openstack_networking_secgroup_rule_v2" "secgroup_rule_rdp" {
   remote_ip_prefix  = var.admin_access_acl["cidr"]
   security_group_id = openstack_networking_secgroup_v2.icas.id
 }
+
+# Get Default Security Group
+data "openstack_networking_secgroup_v2" "default" {
+  name = "default"
+}
