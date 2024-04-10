@@ -11,7 +11,6 @@ export TF_VAR_TENANTID=<OpenStackProjectID>
 export TF_VAR_USERNAME=<UATUsername>
 export TF_VAR_PASSWORD=<UATPassword>
 export TF_VAR_STACKIT_PROJECT_ID=<STACKITProjectID>
-export TF_VAR_STACKIT_SERVICE_ACCOUNT_EMAIL=<STACKITServiceAccountEmail>
 export TF_VAR_STACKIT_SERVICE_ACCOUNT_TOKEN=<STACKITServiceAccountToken>
 ```
 

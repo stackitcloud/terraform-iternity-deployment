@@ -38,6 +38,5 @@ provider "openstack" {
 
 provider "stackit" {
   region = "eu01"
-  service_account_email = trimspace(var.STACKIT_SERVICE_ACCOUNT_EMAIL)
   service_account_token = trimspace(var.STACKIT_SERVICE_ACCOUNT_TOKEN)
 }

@@ -24,11 +24,6 @@ variable "PASSWORD" {
   description = "UAT Password"
 }
 
-variable "STACKIT_SERVICE_ACCOUNT_EMAIL" {
-  type = string
-  description = "STACKIT Service Account Email"
-}
-
 variable "STACKIT_SERVICE_ACCOUNT_TOKEN" {
   type = string
   description = "STACKIT Service Account Token"
